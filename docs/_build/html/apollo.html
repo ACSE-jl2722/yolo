@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>apollo package &mdash; Apollo 2023 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+      <script>
+          var DOCUMENTATION_OPTIONS = {
+              URL_ROOT:'./',
+              VERSION:'2023',
+              LANGUAGE:'None',
+              COLLAPSE_INDEX:false,
+              FILE_SUFFIX:'.html',
+              HAS_SOURCE:  true,
+              SOURCELINK_SUFFIX: '.txt'
+          };
+      </script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="acds-moonshot-apollo" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Apollo
+          </a>
+              <div class="version">
+                2023
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">acds-moonshot-apollo</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">apollo package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-apollo.UI">apollo.UI module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-apollo.analysis">apollo.analysis module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-apollo.config">apollo.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-apollo.crater_predictor">apollo.crater_predictor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-apollo.data_processor">apollo.data_processor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-apollo.download_models">apollo.download_models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-apollo">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Apollo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">acds-moonshot-apollo</a></li>
+      <li class="breadcrumb-item active">apollo package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/apollo.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="apollo-package">
+<h1>apollo package<a class="headerlink" href="#apollo-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-apollo.UI">
+<span id="apollo-ui-module"></span><h2>apollo.UI module<a class="headerlink" href="#module-apollo.UI" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="apollo.UI.GUI">
+<em class="property">class </em><code class="descclassname">apollo.UI.</code><code class="descname">GUI</code><span class="sig-paren">(</span><em>master=None</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.UI.GUI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">tkinter.Frame</span></code></p>
+<blockquote>
+<div>This class creates a graphical user interface for a project,</div></blockquote>
+<p>allowing the user to interact with input options.</p>
+<blockquote>
+<div><p>Parameters:
+master (Tk, optional): The parent widget for the GUI. Default is None.</p>
+<p>Attributes:
+option_frame (Frame): The frame for user-defined hyperparameters.
+model_options (list): The list of available models.
+model_var (StringVar): The variable storing the selected model.
+model_menu (OptionMenu):
+The dropdown menu for selecting models.
+model_var_button (Button): The button for displaying
+the selected model value.
+model_var_label (Label): The label displaying the selected model value.
+data_options (list): The list of available data options.
+data_var (StringVar): The variable storing the selected data option.
+data_menu (OptionMenu): The dropdown menu for selecting data options.
+test_folder_frame (Frame): The frame for the test folder path.
+test_folder_path (Button): The button for choosing the test folder.
+res_dir_frame (Frame): The frame for the result directory.
+e1_label (Label): The label for the result directory.
+result_dir (StringVar): The variable storing the result directory path.
+e1 (Entry): The entry widget for the result directory path.
+detect_frame (Frame): The frame for the detect button.
+detect_btn (Button): The button for starting detection.
+file_frame (Frame): The frame for the file browse button.
+label (Label): The label for displaying the selected file.
+file (Button): The button for browsing and selecting a file.
+exit_frame (Frame): The frame for the exit button.
+exit (Button): The button for exiting the program.</p>
+<p>Methods:
+show_value: Displays the selected model value.
+choose_folder: Chooses the test folder path.
+detect: Starts detection.
+choose: Allows the user to browse and select a file.</p>
+</div></blockquote>
+<dl class="method">
+<dt id="apollo.UI.GUI.analysis">
+<code class="descname">analysis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apollo.UI.GUI.analysis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="apollo.UI.GUI.choose">
+<code class="descname">choose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apollo.UI.GUI.choose" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to choose the specified image file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.UI.GUI.choose_folder">
+<code class="descname">choose_folder</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apollo.UI.GUI.choose_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to choose the specified folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.UI.GUI.detect">
+<code class="descname">detect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apollo.UI.GUI.detect" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to generate results from user’s inputs.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.UI.GUI.show_value">
+<code class="descname">show_value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apollo.UI.GUI.show_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function is used to show what kinds of values users
+choose in the interface.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-apollo.analysis">
+<span id="apollo-analysis-module"></span><h2>apollo.analysis module<a class="headerlink" href="#module-apollo.analysis" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="apollo.analysis.convert2physical">
+<code class="descclassname">apollo.analysis.</code><code class="descname">convert2physical</code><span class="sig-paren">(</span><em>labels</em>, <em>subimg_pix</em>, <em>indices</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.analysis.convert2physical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a set of physical parameter of craters, including size and location.</p>
+<dl class="docutils">
+<dt>img_phy: array or array-like</dt>
+<dd>A set of parameters contain real-world, physical image center
+longitude, latitude, image width, height in degrees, and
+resolution, all given by the user</dd>
+<dt>img_pix: array or array-like</dt>
+<dd>The number of pixels in each picture.</dd>
+<dt>labels: array or array-like</dt>
+<dd>The predicted location and size of craters in the picture.</dd>
+<dt>subimg_pix: array or array-like</dt>
+<dd>The number of pixels in each sub-picture.</dd>
+<dt>indices: array or array-like</dt>
+<dd>The indices of different sub-pictures.</dd>
+</dl>
+<dl class="docutils">
+<dt>crater_size: array or array-like</dt>
+<dd>The physical, real-world crater sizes</dd>
+<dt>crater_loc: array or array-like</dt>
+<dd>The physical, real-world crater locations</dd>
+</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">apollo</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.782866827</span><span class="p">,</span> <span class="mf">0.463593897</span><span class="p">,</span> <span class="mf">0.099159444</span><span class="p">,</span> <span class="mf">0.099098558</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">apollo</span><span class="o">.</span><span class="n">convert2physical</span><span class="p">([</span><span class="o">-</span><span class="mi">135</span><span class="p">,</span> <span class="o">-</span><span class="mf">22.5</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>
+<span class="go">[27291, 13645], labels, [416, 416], [0, 1])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="apollo.analysis.size_frequency_compare_plot">
+<code class="descclassname">apollo.analysis.</code><code class="descname">size_frequency_compare_plot</code><span class="sig-paren">(</span><em>folderpath</em>, <em>detection</em>, <em>real</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.analysis.size_frequency_compare_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot a separate plot of the cumulative crater size-frequency
+distribution of detected craters, if information to calculate
+crater size is provided.</p>
+<dl class="docutils">
+<dt>folderpath: string</dt>
+<dd>The user-specified input folder location</dd>
+<dt>detection: array or array-like</dt>
+<dd>The physical, real-world crater sizes</dd>
+<dt>real: array or array-like</dt>
+<dd>The physical, real-world crater sizes</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-apollo.config">
+<span id="apollo-config-module"></span><h2>apollo.config module<a class="headerlink" href="#module-apollo.config" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="apollo.config.Params">
+<em class="property">class </em><code class="descclassname">apollo.config.</code><code class="descname">Params</code><a class="headerlink" href="#apollo.config.Params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to define some necessary global variables in our project.</p>
+<dl class="docutils">
+<dt>MOON_RADIUS: float</dt>
+<dd>The radius of the Moon(units: m).</dd>
+<dt>MOON_LOC: dict</dt>
+<dd>The dictionary about the latitude and longitude</dd>
+</dl>
+<p>of the central point of the original four
+picture of the Moon(units: degree).
+MOON_TRAIN_W: int</p>
+<blockquote>
+<div>The longitude that this image spans(units: degree).</div></blockquote>
+<dl class="docutils">
+<dt>MOON_TRAIN_H: int</dt>
+<dd>The latitude that this image spans(units: degree).</dd>
+<dt>MOON_RESO: int</dt>
+<dd>The resolution of the picture, which means</dd>
+</dl>
+<p>how many meters a pixel can represent(units: meters).
+LOG_LEVEL: str</p>
+<blockquote>
+<div>The log level.</div></blockquote>
+<dl class="docutils">
+<dt>COLOR:</dt>
+<dd>The color we might use in our project.</dd>
+</dl>
+<dl class="attribute">
+<dt id="apollo.config.Params.COLOR">
+<code class="descname">COLOR</code><em class="property"> = ['red', 'orange', 'yellow', 'blue', 'cyan', 'azure', 'lime', 'lavender', 'ghostwhite']</em><a class="headerlink" href="#apollo.config.Params.COLOR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apollo.config.Params.LOG_LEVEL">
+<code class="descname">LOG_LEVEL</code><em class="property"> = 'INFO'</em><a class="headerlink" href="#apollo.config.Params.LOG_LEVEL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apollo.config.Params.MOON_LOC">
+<code class="descname">MOON_LOC</code><em class="property"> = {'A': [-135, -22.5], 'B': [-135, 22.5], 'C': [-45, -22.5], 'D': [-45, 22.5]}</em><a class="headerlink" href="#apollo.config.Params.MOON_LOC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apollo.config.Params.MOON_RADIUS">
+<code class="descname">MOON_RADIUS</code><em class="property"> = 1737400.0</em><a class="headerlink" href="#apollo.config.Params.MOON_RADIUS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apollo.config.Params.MOON_RESO">
+<code class="descname">MOON_RESO</code><em class="property"> = 100</em><a class="headerlink" href="#apollo.config.Params.MOON_RESO" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apollo.config.Params.MOON_TRAIN_H">
+<code class="descname">MOON_TRAIN_H</code><em class="property"> = 45</em><a class="headerlink" href="#apollo.config.Params.MOON_TRAIN_H" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="apollo.config.Params.MOON_TRAIN_W">
+<code class="descname">MOON_TRAIN_W</code><em class="property"> = 90</em><a class="headerlink" href="#apollo.config.Params.MOON_TRAIN_W" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-apollo.crater_predictor">
+<span id="apollo-crater-predictor-module"></span><h2>apollo.crater_predictor module<a class="headerlink" href="#module-apollo.crater_predictor" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="apollo.crater_predictor.CraterPredictor">
+<em class="property">class </em><code class="descclassname">apollo.crater_predictor.</code><code class="descname">CraterPredictor</code><span class="sig-paren">(</span><em>mars_model</em>, <em>moon_model1</em>, <em>moon_model2</em>, <em>results_path</em>, <em>test_images_path</em>, <em>test_labels_path=None</em>, <em>img_size=416</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class to generate user outputs from input images
+by running object detection on the images using YOLOv5 models.</p>
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.aggregate_labels">
+<code class="descname">aggregate_labels</code><span class="sig-paren">(</span><em>result_file</em>, <em>large_img_size</em>, <em>image_size</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.aggregate_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine the predictions of lunar craters in multiple sub-images into
+a single result.</p>
+<p>result_file (str): name of the file to save the aggregated result to
+large_img_size (tuple): the shape of the large lunar image
+image_size (int): the size (height and width) of each sub-image</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.bounding_box">
+<code class="descname">bounding_box</code><span class="sig-paren">(</span><em>img</em>, <em>x</em>, <em>y</em>, <em>w</em>, <em>h</em>, <em>img_w</em>, <em>img_h</em>, <em>color</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.bounding_box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw bounding boxes.</p>
+<dl class="docutils">
+<dt>img <span class="classifier-delimiter">:</span> <span class="classifier">numpy.array</span></dt>
+<dd>The image read from cv2.imread()</dd>
+<dt>x <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>x position of the crater centre</dd>
+<dt>y <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>y position of the crater centre</dd>
+<dt>w <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Width of crater</dd>
+<dt>h <span class="classifier-delimiter">:</span> <span class="classifier">float</span></dt>
+<dd>Height of crater</dd>
+<dt>img_w: int</dt>
+<dd>Width of the image</dd>
+<dt>img_h: int</dt>
+<dd>Height of the image</dd>
+</dl>
+<dl class="docutils">
+<dt>numpy.array</dt>
+<dd>The image with bounding boxes drawn</dd>
+</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">w</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img_w</span> <span class="o">=</span> <span class="mi">416</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img_h</span> <span class="o">=</span> <span class="mi">416</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bounding_box</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">img_w</span><span class="p">,</span> <span class="n">img_h</span><span class="p">,</span> <span class="n">color</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.calculate_iou">
+<code class="descname">calculate_iou</code><span class="sig-paren">(</span><em>detected</em>, <em>ground_truth</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.calculate_iou" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the Intersection over Union (IoU) between two bounding boxes.</p>
+<p>detected (list): A list of 4 values representing
+the bounding box coordinates (x, y, width, height).
+ground_truth (list): A list of 4 values representing
+the bounding box coordinates (x, y, width, height).</p>
+<p>float: The calculated IoU value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.calculate_statistics">
+<code class="descname">calculate_statistics</code><span class="sig-paren">(</span><em>detections</em>, <em>ground_truths</em>, <em>threshold</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.calculate_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate true positive, false positive,
+and false negative values using IoU.</p>
+<p>detections (numpy.ndarray or list): A list or Numpy array of
+bounding box coordinates (x, y, width, height)
+for each detected object.
+ground_truths (numpy.ndarray or list): A list or Numpy array of
+ground truth bounding box coordinates (x, y, width, height)
+for each object.
+threshold (float): The IoU threshold value to consider
+a detection as a true positive.</p>
+<p>tuple: A tuple of 3 values representing true positive (int),
+false positive (int), and false negative (int) values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.convert_all_detections_to_csv">
+<code class="descname">convert_all_detections_to_csv</code><span class="sig-paren">(</span><em>txt_path</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.convert_all_detections_to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts all txt files in the specified directory to csv format.</p>
+<dl class="docutils">
+<dt>txt_path <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Path to the directory containing the txt files</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.convert_and_move_detections">
+<code class="descname">convert_and_move_detections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.convert_and_move_detections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the YOLOv5 detections saved as txt files
+in the <cite>runs/detect/detections/labels</cite>
+directory to csv format and moves them to <a href="#id1"><span class="problematic" id="id2">`</span></a>results_path/detections’.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.convert_to_global">
+<code class="descname">convert_to_global</code><span class="sig-paren">(</span><em>detection</em>, <em>i_sub_img</em>, <em>j_sub_img</em>, <em>w_img</em>, <em>h_img</em>, <em>sub_img_px=416</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.convert_to_global" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the detected bounding boxes of a sub image to the global
+coordinates in the larger image</p>
+<p>detection (list): detected crater bounds in form of [x, y, w, h]
+i_sub_img (int): the sub image x index in the larger image
+j_sub_img (int): the sub image y index in the larger image
+w_img (int): the width of the large image
+h_img (int): the height of the large image
+sub_img_pix (int): the pixel dimensions of the sub image</p>
+<p>list: [x, y, w, h] as values in the large image</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.convert_yolo_txt_to_csv">
+<code class="descname">convert_yolo_txt_to_csv</code><span class="sig-paren">(</span><em>txt_file</em>, <em>csv_file</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.convert_yolo_txt_to_csv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a YOLOv5 txt file to a csv file.</p>
+<dl class="docutils">
+<dt>txt_file <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Path to the txt file</dd>
+<dt>csv_file <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Path to the csv file</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.create_user_results">
+<code class="descname">create_user_results</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.create_user_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the directory specified in <cite>results_path</cite> if it does not exist.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.crop_img">
+<code class="descname">crop_img</code><span class="sig-paren">(</span><em>img</em>, <em>x</em>, <em>y</em>, <em>pixel_size=416</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.crop_img" title="Permalink to this definition">¶</a></dt>
+<dd><p>Crop a sub-image from a larger image.</p>
+<p>img (ndarray): the larger image to crop a sub-image from
+x (int): the x-coordinate of the top-left corner of the sub-image
+y (int): the y-coordinate of the top-left corner of the sub-image
+pixel_size (int): the size (h and w) of the sub-image (default: 416)</p>
+<p>Returns:
+ndarray: the cropped sub-image</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.csv_to_numpy">
+<code class="descname">csv_to_numpy</code><span class="sig-paren">(</span><em>directory</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.csv_to_numpy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert all csv files in a directory into NumPy arrays.</p>
+<p>directory (str): The path to the directory containing the csv files.</p>
+<p>arrays (dict): A dictionary where the keys are
+the filenames of the csv files and the values are
+the NumPy arrays of the contents of the csv files.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.draw_boxes">
+<code class="descname">draw_boxes</code><span class="sig-paren">(</span><em>label_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.draw_boxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw bounding boxes on images,
+both ground truth (if provided) and detections.
+Results are saved in</p>
+<blockquote>
+<div>‘results_path/images/detections’ and
+‘results_path/images/detections_and_gt’</div></blockquote>
+<dl class="docutils">
+<dt>label_path <span class="classifier-delimiter">:</span> <span class="classifier">str, optional</span></dt>
+<dd>The path to the folder containing ground truth bounding boxes.
+If not provided, only detections will be drawn.</dd>
+</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">draw_boxes</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">draw_boxes</span><span class="p">(</span><span class="n">label_path</span><span class="o">=</span><span class="s1">&#39;/path/to/ground_truth&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.get_statistics">
+<code class="descname">get_statistics</code><span class="sig-paren">(</span><em>label_path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.get_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate and write the true positive (tp),
+false positive (fp), and false negative (fn) values to a csv file.</p>
+<p>label_path (str): The path to the directory containing
+the label csv files.
+If not specified, the function returns without
+performing any operations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.idx_labels">
+<code class="descname">idx_labels</code><span class="sig-paren">(</span><em>det_path</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.idx_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add crater size and physical locations of the craters
+to the label csv files</p>
+<dl class="docutils">
+<dt>det_path: str</dt>
+<dd>Detection path containing information of detected craters</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.predict_lunar_large_image">
+<code class="descname">predict_lunar_large_image</code><span class="sig-paren">(</span><em>images</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.predict_lunar_large_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict lunar craters in a large lunar image by slicing it into
+smaller sub-images and making predictions on each sub-image.
+The predictions are then aggregated into a single result.</p>
+<p>images (str): path to the directory containing the large lunar image(s)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.predict_mars_craters">
+<code class="descname">predict_mars_craters</code><span class="sig-paren">(</span><em>images</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.predict_mars_craters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict mars craters and put results in user_directory/detections.
+Result is a csv file for each image containing the detected locations</p>
+<dl class="docutils">
+<dt>images <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Path to the test images</dd>
+</dl>
+<p>predictor.predict_mars_craters(‘test_images/’)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.predict_moon_craters">
+<code class="descname">predict_moon_craters</code><span class="sig-paren">(</span><em>images</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.predict_moon_craters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict moon craters and put results in user_directory/detections.
+Result is a csv file for each image containing the detected locations</p>
+<dl class="docutils">
+<dt>images <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Path to the test images</dd>
+</dl>
+<p>predictor.predict_moon_craters(‘test_images/’)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.slice_lunar_large_image">
+<code class="descname">slice_lunar_large_image</code><span class="sig-paren">(</span><em>img_file</em>, <em>folder_name</em>, <em>image_size</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.slice_lunar_large_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Slice a large lunar image into smaller sub-images and save them</p>
+<p>img_file (str): path to the large lunar image file
+folder_name (str): name of the folder to save the sub-images to
+image_size (int): the size (height and width) of each sub-image</p>
+<p>tuple: the shape of the large lunar image</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.crater_predictor.CraterPredictor.yolo_detect">
+<code class="descname">yolo_detect</code><span class="sig-paren">(</span><em>images</em>, <em>weights</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.crater_predictor.CraterPredictor.yolo_detect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run YOLOv5 detection</p>
+<dl class="docutils">
+<dt>images <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Path to the test images</dd>
+<dt>weights <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Path to the model weights</dd>
+<dt>name <span class="classifier-delimiter">:</span> <span class="classifier">str</span></dt>
+<dd>Name of the output file. Detections
+are converted to to csv and moved here.</dd>
+</dl>
+<p>predictor.yolo_detect(‘test_images/’, ‘mars.weights’, ‘detections’)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-apollo.data_processor">
+<span id="apollo-data-processor-module"></span><h2>apollo.data_processor module<a class="headerlink" href="#module-apollo.data_processor" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="apollo.data_processor.DataProcessor">
+<em class="property">class </em><code class="descclassname">apollo.data_processor.</code><code class="descname">DataProcessor</code><span class="sig-paren">(</span><em>image_data_path</em>, <em>label_data_path</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.data_processor.DataProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="apollo.data_processor.DataProcessor.convert_all_labels_to_txt">
+<code class="descname">convert_all_labels_to_txt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#apollo.data_processor.DataProcessor.convert_all_labels_to_txt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a CSV file with header to YOLO format text file.</p>
+<p>csv_file (str): path to the CSV file with header to be converted.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.data_processor.DataProcessor.convert_csv_to_yolo_txt">
+<code class="descname">convert_csv_to_yolo_txt</code><span class="sig-paren">(</span><em>csv_file</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.data_processor.DataProcessor.convert_csv_to_yolo_txt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a CSV file to YOLO format text file.</p>
+<p>csv_file (str): path to the CSV file to be converted.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.data_processor.DataProcessor.create_data_directories">
+<code class="descname">create_data_directories</code><span class="sig-paren">(</span><em>destination_root</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.data_processor.DataProcessor.create_data_directories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create directories for train, validation and test datasets.</p>
+<p>destination_root (str): root directory where train,
+validation and test datasets will be stored.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.data_processor.DataProcessor.move_files_to_folder">
+<code class="descname">move_files_to_folder</code><span class="sig-paren">(</span><em>files</em>, <em>dest</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.data_processor.DataProcessor.move_files_to_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Move files between two folders</p>
+<p>files (str): from folder
+dest (str): to folder</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="apollo.data_processor.DataProcessor.split_and_move_data">
+<code class="descname">split_and_move_data</code><span class="sig-paren">(</span><em>destination_root</em><span class="sig-paren">)</span><a class="headerlink" href="#apollo.data_processor.DataProcessor.split_and_move_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Split and move image and label data to train,
+validation and test directories.</p>
+<p>destination_root (str): root directory where train,
+validation and test datasets will be stored.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-apollo.download_models">
+<span id="apollo-download-models-module"></span><h2>apollo.download_models module<a class="headerlink" href="#module-apollo.download_models" title="Permalink to this headline">¶</a></h2>
+<p>Downloads the moon and mars models locally if they don’t exist.</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>None</dd>
+</dl>
+</div>
+<div class="section" id="module-apollo">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-apollo" title="Permalink to this headline">¶</a></h2>
+<p>Moonshot: Automatic Impact Crater Detection on the Moon</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="acds-moonshot-apollo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Apollo.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

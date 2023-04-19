@@ -1,0 +1,29 @@
+name: flake8
+
+on:
+   pull_request:
+     branches:
+       - master
+       - main
+
+jobs:
+  flake8:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python 3.10.9
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.10.9
+
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install flake8
+        
+    - name: Lint with flake8
+      run: |
+        flake8 .
